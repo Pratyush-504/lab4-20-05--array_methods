@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays methods</title>
+</head>
+
+<body>
+    <h1>Drop down menu using arra methods</h1>
+    <h2>Initial Array: 4,7,2,9,1,6,8</h2>
+
+<label for="numbers">Numbers</label>
+
+<select name="numbers" id="numbers">
+  <option value="1">sort</option>
+  <option value="2">push</option>
+  <option value="3">pop</option>
+  <option value="4">reverse</option>
+  <option value="5">slice</option>
+  <option value="6">fill</option>
+  <option value="7">shift</option>
+  <option value="8">indexOf</option>
+
+</select>
+<button onclick="func()">Submit</button>
+
+
+<h2 id="res"></h2>
+
+<script>
+    let num=[4,7,2,9,1,6,8];
+    
+    function func()
+    {
+    let z=document.getElementById("numbers").value;
+
+    switch(z)
+    {
+        case "1": num.sort();
+                document.getElementById("res").innerHTML="Arrays:"+ num;
+                 break;
+
+        case "2": var temp=prompt("Enter the value to be pushed:")
+        num.push(temp);
+        document.getElementById("res").innerHTML="Array: "+ num;
+                 break;
+        
+        case "3": num.pop();
+        document.getElementById("res").innerHTML="Array: "+ num;
+                 break;
+
+        case "4": num.reverse();
+        document.getElementById("res").innerHTML="Array: "+ num;
+                 break;
+
+        case "5": var p1=prompt("Slice from:")
+        var p2=prompt("Slice to:")
+        var arr1=num.slice(p1,p2);
+        document.getElementById("res").innerHTML="Array: "+ arr1;
+                 break;
+
+        case "6": var temp=prompt("Enter the value to be filled:")
+        var arr2=num.fill(temp);
+        document.getElementById("res").innerHTML="Array: "+ arr2;
+                 break;
+
+        case "7":var arr3=num.shift();
+        document.getElementById("res").innerHTML="Array: "+ arr3;
+                 break;
+
+        case "8":var ind= prompt("Enter the element whose index you want to find:")
+        var index=parseInt(ind);
+        var ans=num.indexOf(index);
+        document.getElementById("res").innerHTML = "Entered elements index: "+ans;
+        break;
+        
+        default: break;
+    }
+}
+
+
+
+
+</script>
+
+</body>
+</html>
